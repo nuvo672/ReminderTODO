@@ -1,0 +1,51 @@
+# Edit this file to match your week. Redeploy (git push) after changes.
+name: Adam
+timezone: America/New_York
+
+# Daily plan posted in the channel
+morning_summary: "09:00"
+
+# Never ping in this window (unless you ask for an exact time in it)
+quiet_hours:
+  start: "01:00"
+  end: "09:00"
+
+# If you ignore a ping: nudge every 30 min, up to 2 times, then Claude reschedules it
+reping:
+  interval_minutes: 30
+  max_nudges: 2
+
+# Your week. Claude reads all of these when picking times.
+#   block: true  -> hard rule, no pings at all in this window
+#   block: false -> "busy-ish", Claude avoids it but can use it if needed
+# days: mon,tue,... or "weekdays", "weekends", "daily"
+weekly_schedule:
+  - name: Trading (morning session)
+    days: weekdays
+    start: "09:30"
+    end: "11:30"
+    block: true
+
+  - name: Classes
+    days: [mon, wed]
+    start: "11:00"
+    end: "11:50"
+    block: true
+
+  - name: Classes - Discussion
+    days: [fri]
+    start: "14:00"
+    end: "16:00"
+    block: true
+  
+  - name: Gym
+    days: [mon, tue, wed, thu, fri]
+    start: "05:45"
+    end: "07:30"
+    block: false
+    note: good time for errands right after
+
+# Anything else Claude should know when picking times (free text)
+about_me: |
+  College student in Maryland who trades ES/NQ futures. Mornings before 9:30 are prep time.
+  Usually free and responsive in the afternoon after trading.
